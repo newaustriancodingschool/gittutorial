@@ -11,10 +11,30 @@ git clone git@github.com:RefugeesCodeAT/gittutorial.git
 ```
 git checkout encryption
 ```
-## Group B
+After that you should be able to see the *encrypt_and_write* method in [mycrypto.py](crypto/mycrypto.py).
+This method requires three parameters, namely *message*, *keyname* and *write_to*.
+Your task is to implement the encryption using RSA. Therefore you have to load the public key of your partner and encrypt the given message with this key. Your partner should be able to read this message with his/her private key.
+To implement this task you have to do the following steps. (feel free to change the [markdown](README.md)) if you completed the steps.
+
+- [ ] load the public key as a string from *filename*. Hint: use *myfile*
+- [ ] convert string into RSA key. Hint: use *RSA.importKey()*-Method
+- [ ] encode the message as 'utf-8'. Therefore look at the string API
+- [ ] encrypt the *message*
+- [ ] write the encrypted text to a file: Hint: use *myfile*. To use this method you have to convert the encrypted text to a string.
+- [ ] **commit your task and push it**
+
+### Testing
+Go to commandline and enter
 ```
-git checkout decryption
+phyton
 ```
+There you should see the python shell starting with *>>>*
+```python
+>>> from crypto.test import test
+>>> test.test()
+```
+To exit the shell press *Ctrl+D*
+***
 ## Merging
 First you need to find a partner from the other team.
 You don't want to work on my github branch so we are going to change the origin to one of you.
