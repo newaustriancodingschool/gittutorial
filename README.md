@@ -7,14 +7,38 @@ use the command
 git clone git@github.com:RefugeesCodeAT/gittutorial.git
 ```
 ***
-## Group A
-```
-git checkout encryption
-```
 ## Group B
 ```
 git checkout decryption
 ```
+After that you should be able to see the *decryption_and_return* method in [mycrypto.py](crypto/mycrypto.py).
+This method requires two parameters, namely *filename* and *keyname*.
+Your task is to implement the decryption using RSA. Therefore you have to load your private key and decrypt the encrypted message from *filename* with this key. You should be able to read this message.
+To implement this task you have to do the following steps. (feel free to change the [markdown](README.md)) if you completed the steps.
+
+- [ ] load the private key as a string from *filename*. Hint: use *myfile*
+- [ ] convert the string into RSA key. Hint: use *RSA.importKey()*-Method
+- [ ] load the encrypted text. Hint: use *myfile*
+- [ ] convert the encrypted text from a string to binary. Hint: use
+```python
+ast.literal_eval(str)
+```
+- [ ] decrypt the message
+- [ ] decode the decrypted text as 'utf-8'. Therefore look at the string API
+- [ ] print decrypted text
+- [ ] **commit your task and push it**
+
+### Testing
+Go to commandline and enter
+```
+phyton
+```
+There you should see the python shell starting with *>>>*
+```python
+>>>from crypto.test import test
+```
+To exit the shell press *Ctrl+D*
+***
 ## Merging
 First you need to find a partner from the other team.
 You don't want to work on my github branch so we are going to change the origin to one of you.
