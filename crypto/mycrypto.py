@@ -16,5 +16,24 @@ def generate_key_pair():
 
 
 def encrypt_and_write(message, keyname, write_to):
-    # TODO: see README.md Group A
-    print('see README.md Group A')
+
+    public_key = myfile.readfile(keyname)
+    RSA_key = RSA.importKey(public_key)
+    unicode_string = message.encode('utf-8', "strict")
+    encrypted = RSA_key.encrypt(unicode_string, 32)
+    myfile.writefile(write_to, str(encrypted))
+
+# def decrypt_and_write(message_path, keyname, write_to):
+#     public_key = myfile.readfile(keyname)
+#     RSA_key = RSA.importKey(public_key)
+#     encrypted = myfile.readfile(message_path)
+#     decrypted = RSA_key.decrypt(encrypted)
+#     myfile.writefile(write_to, str(decrypted))
+
+# def decode_rsa(message_path, keyname):
+#     public_key = myfile.readfile(keyname)
+#     RSA_key = RSA.importKey(public_key)
+#     cipher = PKCS1_OAEP.new(RSA_key)
+#     encrypted = myfile.readfile(message_path)
+#     message = cipher.decrypt(bytearray.fromhex(encrypted))
+#     print(message)
